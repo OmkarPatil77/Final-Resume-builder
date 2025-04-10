@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Editor - ResumeBuilder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>ResumeBuilder</span>
+                </div>
+                <div class="editor-actions">
+                    <a href="#" id="back-to-template" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Template
+                    </a>
+                    <button id="save-btn" class="save-btn">
+                        <i class="fas fa-save"></i>
+                        Save
+                    </button>
+                    <button id="download-btn" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download
+                    </button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="editor-section">
+                <div class="editor-container">
+                    <div class="editor-sidebar">
+                        <h2>Edit Your Resume</h2>
+                        
+                        <div class="editor-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-tab="personal">Personal</button>
+                                <button class="tab-btn" data-tab="experience">Experience</button>
+                                <button class="tab-btn" data-tab="education">Education</button>
+                                <button class="tab-btn" data-tab="skills">Skills</button>
+                            </div>
+                            
+                            <div class="tab-content">
+                                <!-- Personal Tab -->
+                                <div class="tab-pane active" id="personal-tab">
+                                    <div class="form-group">
+                                        <label for="full-name">Full Name</label>
+                                        <input type="text" id="full-name" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="job-title">Professional Title</label>
+                                        <input type="text" id="job-title" value="Software Engineer">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" value="john.doe@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label>
+                                            <input type="text" id="phone" value="(123) 456-7890">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" id="location" value="New York, NY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="summary">Professional Summary</label>
+                                        <textarea id="summary" rows="4">Experienced software engineer with a passion for building scalable web applications and solving complex problems.</textarea>
+                                    </div>
+                                </div>
+                                
+                                <!-- Experience Tab -->
+                                <div class="tab-pane" id="experience-tab">
+                                    <div id="experience-items">
+                                        <!-- Experience items will be dynamically inserted here by JavaScript -->
+                                    </div>
+                                    <button id="add-experience" class="add-item-btn">
+                                        <i class="fas fa-plus"></i>
+                                        Add Experience
+                                    </button>
+                                </div>
+                                
+                                <!-- Education Tab -->
+                                <div class="tab-pane" id="education-tab">
+                                    <div id="education-items">
+                                        <!-- Education items will be dynamically inserted here by JavaScript -->
+                                    </div>
+                                    <button id="add-education" class="add-item-btn">
+                                        <i class="fas fa-plus"></i>
+                                        Add Education
+                                    </button>
+                                </div>
+                                
+                                <!-- Skills Tab -->
+                                <div class="tab-pane" id="skills-tab">
+                                    <div class="form-group">
+                                        <label for="skills">Skills (comma separated)</label>
+                                        <textarea id="skills" rows="4">JavaScript, React, Node.js, TypeScript, HTML/CSS, Git, RESTful APIs, SQL, MongoDB, AWS</textarea>
+                                    </div>
+                                    <div class="skills-preview">
+                                        <h4>Skills Preview</h4>
+                                        <div id="skills-tags" class="skills-tags">
+                                            <!-- Skills tags will be dynamically inserted here by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-preview">
+                        <h2>Preview</h2>
+                        <div class="preview-container">
+                            <div id="resume-preview-content" class="preview-content">
+                                <!-- Resume preview will be dynamically inserted here by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="download-options">
+                            <button id="download-pdf" class="download-btn" data-format="pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </button>
+                            <button id="download-docx" class="download-btn" data-format="docx">
+                                <i class="fas fa-file-word"></i>
+                                Download DOCX
+                            </button>
+                            <button id="download-txt" class="download-btn" data-format="txt">
+                                <i class="fas fa-file-alt"></i>
+                                Download TXT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> ResumeBuilder. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+  <!-- Download Modal -->
+<div id="download-modal" class="download-modal">
+    <div class="modal-content">
+        <button class="close-modal">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <h2>Downloading Resume</h2>
+        
+        <div class="download-progress">
+            <div class="progress-spinner"></div>
+            <p>Preparing your resume for download...</p>
+        </div>
+        
+        <div class="download-success hidden">
+            <div class="success-checkmark">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <p>Your resume has been successfully downloaded in <span id="format-type">PDF</span> format!</p>
+            <button id="close-download-modal" class="modal-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+    <script src="js/editor.js"></script>
+    <!-- Add these scripts before the closing body tag -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.8.2/docx.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>

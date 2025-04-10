@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Complete - ResumeBuilder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>ResumeBuilder</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="index.html" class="login-btn">Home</a>
+                    <a href="signup.html" class="get-started-btn">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="success-section">
+                <div class="section-container">
+                    <div class="success-content">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h1>Download Complete!</h1>
+                        <p>Your resume has been successfully downloaded in <span id="format-type">PDF</span> format.</p>
+                        <div class="success-actions">
+                            <a href="index.html" class="primary-btn">
+                                <i class="fas fa-arrow-left"></i>
+                                Return to Home
+                            </a>
+                            <a href="templates.html" class="secondary-btn">
+                                Browse More Templates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> ResumeBuilder. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Get format from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const format = urlParams.get('format') || 'pdf';
+            
+            // Update format type
+            document.getElementById('format-type').textContent = format.toUpperCase();
+        });
+    </script>
+</body>
+</html>

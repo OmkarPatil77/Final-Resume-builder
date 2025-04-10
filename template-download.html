@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Template - ResumeBuilder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>ResumeBuilder</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" id="back-to-template" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Template
+                    </a>
+                    <a href="signup.html" class="get-started-btn">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="download-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h1>Download <span id="template-name">Template</span></h1>
+                        <p>Choose your preferred format to download this template.</p>
+                    </div>
+                    
+                    <div class="download-options">
+                        <div class="download-option-card">
+                            <div class="download-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3>PDF Format</h3>
+                            <p>Perfect for submitting to job applications.</p>
+                            <button class="download-btn" data-format="pdf">
+                                <i class="fas fa-download"></i>
+                                Download PDF
+                            </button>
+                        </div>
+                        
+                        <div class="download-option-card">
+                            <div class="download-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <h3>DOCX Format</h3>
+                            <p>Editable in Microsoft Word or Google Docs.</p>
+                            <button class="download-btn" data-format="docx">
+                                <i class="fas fa-download"></i>
+                                Download DOCX
+                            </button>
+                        </div>
+                        
+                        <div class="download-option-card">
+                            <div class="download-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>TXT Format</h3>
+                            <p>Plain text for ATS compatibility.</p>
+                            <button class="download-btn" data-format="txt">
+                                <i class="fas fa-download"></i>
+                                Download TXT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="upgrade-prompt">
+                        <h3>Need to customize this template?</h3>
+                        <p>Create an account to customize this template with your information and download it in any format.</p>
+                        <a href="signup.html" class="primary-btn">Create Free Account</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> ResumeBuilder. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/template-download.js"></script>
+</body>
+</html>

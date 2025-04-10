@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Templates - ResumeBuilder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>ResumeBuilder</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+                    <a href="signup.html" class="get-started-btn">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="templates-page-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h1>Resume Templates</h1>
+                        <p>Choose from our collection of professionally designed templates to make your resume stand out.</p>
+                    </div>
+                    
+                    <div class="templates-filters">
+                        <div class="filter-group">
+                            <label>Category:</label>
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="Professional">Professional</option>
+                                <option value="Creative">Creative</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Academic">Academic</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort by:</label>
+                            <select id="sort-filter">
+                                <option value="popular">Most Popular</option>
+                                <option value="newest">Newest</option>
+                                <option value="name">Name (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="templates-grid" id="templates-grid">
+                        <!-- Template cards will be dynamically inserted here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> ResumeBuilder. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/templates.js"></script>
+</body>
+</html>

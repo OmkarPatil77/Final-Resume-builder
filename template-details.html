@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Details - ResumeBuilder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>ResumeBuilder</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="templates.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Templates
+                    </a>
+                    <a href="signup.html" class="get-started-btn">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <section class="template-details-section">
+                <div class="section-container">
+                    <div class="template-details-grid">
+                        <div class="template-details-content">
+                            <h1 id="template-name">Template Name</h1>
+                            <p id="template-description" class="template-description">Template description will appear here.</p>
+                            
+                            <div class="template-features">
+                                <h3>Features</h3>
+                                <ul id="template-features-list">
+                                    <!-- Features will be dynamically inserted here by JavaScript -->
+                                </ul>
+                            </div>
+                            
+                            <div class="template-actions">
+                                <a href="#" id="customize-btn" class="primary-btn">
+                                    <i class="fas fa-edit"></i>
+                                    Customize Template
+                                </a>
+                                <a href="#" id="download-btn" class="secondary-btn">
+                                    <i class="fas fa-download"></i>
+                                    Download Template
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="template-preview">
+                            <div class="template-image-container">
+                                <img id="template-image" src="images/placeholder.png" alt="Template preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> ResumeBuilder. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/template-details.js"></script>
+</body>
+</html>
